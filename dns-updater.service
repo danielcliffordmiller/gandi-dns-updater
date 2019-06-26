@@ -1,0 +1,10 @@
+[Unit]
+Description=Gandi DNS IP Address Updater
+Requires=networking.service
+After=networking.service
+
+[Service]
+ExecStart=/home/danmiller/projects/gandi-dns-updater/gandi-dns-updater
+
+[Install]
+WantedBy=default.target

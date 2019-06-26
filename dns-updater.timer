@@ -1,0 +1,8 @@
+[Unit]
+Description=Timer for dns-updater
+
+[Timer]
+OnUnitActiveSec=1h
+
+[Install]
+WantedBy=default.target
