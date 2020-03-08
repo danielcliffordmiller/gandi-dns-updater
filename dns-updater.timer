@@ -5,4 +5,4 @@ Description=Timer for dns-updater
 OnUnitActiveSec=1h
 
 [Install]
-WantedBy=default.target
+WantedBy=timers.target

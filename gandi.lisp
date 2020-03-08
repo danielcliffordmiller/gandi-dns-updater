@@ -15,7 +15,7 @@
 ;                  *domain-name*
 ;                  "/records/%40/A"))
 
-(defvar *record-names* '("@" "files"))
+(defvar *record-names* '("@"))
 
 (defvar *log-format* '((:year 4) #\- (:month 2) #\- (:day 2)
                                  #\SPACE
