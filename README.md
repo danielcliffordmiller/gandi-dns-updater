@@ -3,11 +3,10 @@ gandi-dns-updater
 
 This is a simple script to call gandi's DNS api and update my dns entry if necessary.
 
-To build this app, you could run something like:
+It currently runs via roswell:
 ```
-buildapp --load-system gandi-dns-updater \
-         --asdf-tree ~/quicklisp/dists/quicklisp/software/ \
-         --eval '(defun main (args) (gandi:run-check-and-update))' \
-         --output gandi-dns-updater \
-         --entry main
+./dns-updater.ros
 ```
+and uses `bot.whatismyipaddress.com` for figuring our your public facing ip.
+
+It also includes systemd files for running on a timer (currently checking the ip-address every hour).

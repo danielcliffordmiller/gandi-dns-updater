@@ -4,7 +4,8 @@ Requires=networking.service
 After=networking.service
 
 [Service]
-ExecStart=/home/danmiller/projects/gandi-dns-updater/gandi-dns-updater
+User=danmiller
+ExecStart=/home/danmiller/projects/gandi-dns-updater/dns-updater.ros
 
 [Install]
 WantedBy=default.target
