@@ -1,0 +1,8 @@
+[gandi]
+
+api-url = "https://dns.api.gandi.net/api/v5/domains"
+api-key = "_____API_KEY_GOES_HERE_____"
+
+[domain-1]
+name = "example.com"
+ttl = 1200

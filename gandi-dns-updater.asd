@@ -15,6 +15,7 @@
 	       :local-time
 	       :alexandria
 	       :split-sequence
+	       :pp-toml
 	       :cl-stun)
   :serial t
   :components ((:file "package")
