@@ -6,5 +6,8 @@
    :local-time
    :alexandria
    :split-sequence
-   :cl-stun)
+   :cl-stun
+   :uiop/os
+   :uiop/pathname)
+  (:shadow :featurep)
   (:export :run-check-and-update))

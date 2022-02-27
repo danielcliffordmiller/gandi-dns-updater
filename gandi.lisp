@@ -1,7 +1,32 @@
 (in-package :gandi)
 
+(defvar *paths*
+  (nconc (cons
+	  (getcwd)
+	  (mapcar
+	   (compose #'(lambda (pn)
+			(merge-pathnames
+			 (ensure-directory-pathname #P"dns-updater")
+			 pn))
+		    #'ensure-directory-pathname)
+	   (append
+	    #+unix (list
+		    #P"/etc/"
+		    (or (getenv "XDG_CONFIG_HOME")
+			(concatenate 'string
+				     (getenv "HOME")
+				     "/.config"))))))))
+
+(defun find-config-file ()
+  (let ((paths
+	  (mapcar (compose
+		   #'(lambda (pn)
+		       (merge-pathnames pn #P"settings.toml")))
+		  *paths*)))
+    (find-if #'probe-file paths)))
+
 (defun load-config ()
-  (let* ((config-file #P"settings.toml")
+  (let* ((config-file (find-config-file))
 	 (toml-string (read-file-into-string config-file))
 	 (parsed (pp-toml:parse-toml toml-string)))
     (loop with config
